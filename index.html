@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Operational Dashboard Terminal Petikemas Surabaya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+
+<div class="topbar">
+  <div class="tb-brand">
+    <img src="assets/logo-danantara.png" style="height: 30px;width:auto;object-fit:contain" alt="Danantara Indonesia">
+      <div class="tb-divider"></div>
+    <img src="assets/logo-tps.png" style="height:36px;width:auto;object-fit:contain" alt="Pelindo">
+    <div>
+      <div class="tb-title">Operational Dashboard Terminal Petikemas Surabaya</div>
+      <div class="tb-sub">PT Terminal Petikemas Surabaya · Data Gate & Yard Activity </div>
+    </div>
+  </div>
+  <div class="tb-right">
+    <div class="live-badge"><div class="live-dot"></div>Live</div>
+    <div class="clock" id="clock">--:--:--</div>
+  </div>
+</div>
+ 
+<div class="ctrl-bar">
+  <div class="ctrl-group"><span class="ctrl-lbl">Tanggal</span><input type="date" id="datePicker" onchange="render()"></div>
+  <div class="ctrl-group">
+    <span class="ctrl-lbl">Shift</span>
+    <div class="stabs">
+      <div class="stab on" onclick="setShift(this,'ALL')">Semua</div>
+      <div class="stab" onclick="setShift(this,'III')">Shift III · 00–08</div>
+      <div class="stab" onclick="setShift(this,'I')">Shift I · 08–16</div>
+      <div class="stab" onclick="setShift(this,'II')">Shift II · 16–24</div>
+    </div>
+  </div>
+  <div class="ctrl-group"><span class="ctrl-lbl">Bulan</span>
+    <select id="bulanPick" onchange="render()">
+      <option value="">Semua Bulan</option>
+      <option value="01">Januari</option><option value="02">Februari</option>
+      <option value="03">Maret</option><option value="04">April</option>
+      <option value="05" selected>Mei</option>
+    </select>
+  </div>
+  <div class="ctrl-group"><span class="ctrl-lbl">Tampilan</span>
+    <select id="viewMode" onchange="render()">
+      <option value="gate">Gate Activity</option>
+      <option value="cy">CY Activity (18–25 Mei)</option>
+      <option value="both" selected>Keduanya</option>
+    </select>
+  </div>
+  <span class="upd-info" id="updInfo">—</span>
+</div>
+ 
+<div class="alert-bar" id="alertBar"></div>
+ 
+<div class="main" id="mainContent"></div>
+ 
+<div class="footer">TPS Operational Dashboard · Gate Data Januari–Mei 2026 · CY Activity 18–25 Mei 2026 · Sumber: OPUS/TOS</div>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="./dashboard.js"></script>
