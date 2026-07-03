@@ -624,7 +624,7 @@ function buildBlockActivitySection(){
           <th class="ba-th-r" style="color:#1e40af">Load</th>
           <th class="ba-th-r" style="color:#15803d">Recv</th>
           <th class="ba-th-r" style="color:#6d28d9">Disc</th>
-          <th class="ba-th-r">Shift</th>
+          <th class="ba-th-r">Shifting</th>
           <th class="ba-th-r">Total</th>
         </tr></thead>
         <tbody>${rows}</tbody>
